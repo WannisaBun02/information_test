@@ -15,4 +15,7 @@ Route::get('edit/{id}',[AdminController::class,'edit'])->name('edit');
 Route::fallback(function () {
     return view('index');
 });
+// เพิ่มข้อมูล
 Route::post('insertt',[AdminController::class,'insertt'])->name('insertt');
+// แก้ไขข้อมูล
+Route::post('update/{id}',[AdminController::class,'update'])->name('update');

@@ -18,7 +18,7 @@
 <body style="background-color: #D6CC99; ">
     <div class="container py-2">
         <h2 style="color: #001524;">แก้ไขข้อมูล</h2>
-        <form action="#" method="POST">
+        <form action="{{route('update',$user_names->id)}}" method="POST">
             @csrf
             <div class="container h-100 d-flex justify-content-center">
                 <div class="form-group" style="width:60%;">

@@ -44,4 +44,23 @@ class AdminController extends Controller
         $user_names = DB::table('information_tests')->where('id',$id)->first();
         return view('edit', compact('user_names'));
     }
+    function update(Request $request,$id)
+    {
+        $request->validate([
+            'name' => 'required',
+            'age' => 'required',
+            'gender' => 'required|not_in:เลือกเพศ',
+        ], [
+            'gender.not_in' => 'กรุณาเลือกเพศ',
+            'name.required' => 'กรุณากรอกชื่อ',
+            'age.required' => 'กรุณากรอกอายุ'
+        ]);
+        $data=[
+            'name'=>$request->name,
+            'age'=>$request->age,
+            'gender'=>$request->gender
+        ];
+        DB::table('information_tests')->where('id',$id)->update($data);
+        return redirect('/');
+    }
 }
