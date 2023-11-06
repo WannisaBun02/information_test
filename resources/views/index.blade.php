@@ -38,7 +38,7 @@
                     <td>{{$item->age}}</td>
                     <td>{{$item->gender}}</td>
                     <td><a href="#" name="edit_in" id="edit_in" class="btn" style="background-color: #445D48; color: #D6CC99;">แก้ไข</a></td>
-                    <td><a href="{{route('delete',$item->id)}}" name="de_in" id="de_in" class="btn" style="background-color: #001524; color: #D6CC99;">ลบ</a></td>
+                    <td><a href="{{route('delete',$item->id)}}" name="de_in" id="de_in" class="btn" style="background-color: #001524; color: #D6CC99;" onclick="return confirm('คุณต้องการลบชื่อ {{$item->name}} หรือไม่ ?')">ลบ</a></td>
                 </tr>
                 @endforeach
             </table>
