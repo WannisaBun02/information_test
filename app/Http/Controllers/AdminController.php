@@ -27,6 +27,13 @@ class AdminController extends Controller
             'name.required' => 'กรุณากรอกชื่อ',
             'age.required' => 'กรุณากรอกอายุ'
         ]);
+        $data=[
+            'name'=>$request->name,
+            'age'=>$request->age,
+            'gender'=>$request->gender
+        ];
+        DB::table('information_tests')->insert($data);
+        return redirect('/');
     }
     function delete($id)
     {
