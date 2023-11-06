@@ -9,6 +9,8 @@ Route::get('/', [AdminController::class,'index'])->name('index');
 Route::get('insert',[AdminController::class,'insert'])->name('insert');
 // ลบข้อมูล
 Route::get('delete/{id}',[AdminController::class,'delete'])->name('delete');
+// แก้ไข
+Route::get('edit/{id}',[AdminController::class,'edit'])->name('edit');
 // เมื่อไม่พบข้อมูล
 Route::fallback(function () {
     return view('index');

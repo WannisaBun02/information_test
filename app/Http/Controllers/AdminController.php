@@ -40,4 +40,8 @@ class AdminController extends Controller
         DB::table('information_tests')->where('id', $id)->delete();
         return redirect('/');
     }
+    function edit($id){
+        $user_names = DB::table('information_tests')->where('id',$id)->first();
+        return view('edit', compact('user_names'));
+    }
 }
