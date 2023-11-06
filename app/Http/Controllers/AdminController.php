@@ -9,7 +9,7 @@ class AdminController extends Controller
 {
     function index()
     {
-        $user_names = DB::table('information_tests')->get();
+        $user_names = DB::table('information_tests')->paginate(5);
         return view('index', compact('user_names'));
     }
     function insert()
