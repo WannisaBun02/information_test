@@ -1,7 +1,42 @@
 body {
-    background-color: #EDE4FF;
+    background-color: #F6F1F1;
 }
 
 h1 {
-    color: #6528F7;
+    color: #000000;
 }
+
+h2 {
+    color: #000000;
+}
+
+.container_f {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.box_user {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    height: 30%;
+    width: 20%;
+    background-color: #bddee775;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px;
+}
+
+.box_insert {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #bddee775;
+    padding: 20px;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.795); /* กำหนดขนากรอบเป็น 0 */
+    border-radius: 15px; /* ความโค้งของขอบ */
+    height: 30%;
+    width: 40%;
+    
+}
+
+
