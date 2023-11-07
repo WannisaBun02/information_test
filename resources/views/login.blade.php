@@ -62,8 +62,8 @@
                                 <form id="login" action="login" method="post">
                                     @csrf
                                     <div class="field padding-bottom--24">
-                                        <label for="name">Username</label>
-                                        <input type="text" name="name" id="name" required>
+                                        <label for="email">Email</label>
+                                        <input type="email" name="email" id="email" required>
                                     </div>
                                     <div class="field padding-bottom--24">
                                         <div class="grid--50-50">

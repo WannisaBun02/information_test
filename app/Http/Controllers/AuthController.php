@@ -12,10 +12,10 @@ class AuthController extends Controller
 {
     function login(Request $request)
     {
-        $name = $request->input('name');
+        $email = $request->input('email');
         $password = md5($request->input('password'));
 
-        $user = User::where('name', $name)->first();
+        $user = User::where('email', $email)->first();
 
         if ($user && $user->password === $password) {
             // Authentication successful
