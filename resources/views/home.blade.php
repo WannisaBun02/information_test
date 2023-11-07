@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Information</title>
+    <title>Home</title>
     <!-- CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -20,8 +20,7 @@
         <div class="container-fluid">
             <h1>Information</h1>
             <form class="d-flex">
-                <a href="insert" class="btn" style="background-color: #000000; color: #F6F1F1;">เพิ่มข้อมูล</a>&nbsp;
-                <a href="logout" class="btn" style="background-color: #000000; color: #F6F1F1;">ออกจากระบบ</a>
+                <a href="login" class="btn" style="background-color: #000000; color: #F6F1F1;">เข้าสู่ระบบ</a>
             </form>
         </div>
     </nav>
@@ -34,11 +33,6 @@
                         ชื่อ : {{ $item->name }}<br>
                         อายุ : {{ $item->age }}<br>
                         เพศ : {{ $item->gender }} <br>
-                        <a href="{{ route('edit', $item->id) }}" name="edit_in" id="edit_in" class="btn"
-                            style="background-color: #146C94; color: #F6F1F1;">แก้ไข</a>
-                        <a href="{{ route('delete', $item->id) }}" name="de_in" id="de_in" class="btn"
-                            style="background-color: #000000; color: #F6F1F1;"
-                            onclick="return confirm('คุณต้องการลบชื่อ {{ $item->name }} หรือไม่ ?')">ลบ</a>
                     </div>
                 @endforeach
             </div><br>

@@ -62,12 +62,10 @@
                     <span class="text text-danger">{{ $message }}</span>
                 </div>
             @enderror
-            <a href="/" class="btn" style="background-color: #000000; color: #F6F1F1;">กลับไปหน้าแรก</a>
+            <a href="/index" class="btn" style="background-color: #000000; color: #F6F1F1;">กลับไปหน้าแรก</a>
             <input type="submit" class="btn" style="background-color: #146C94; color: #F6F1F1;" value="บันทีก">
         </form><br>
-
     </div>
-
 </body>
 
 </html>
