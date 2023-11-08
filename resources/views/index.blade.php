@@ -20,8 +20,8 @@
         <div class="container-fluid">
             <h1>Information</h1>
             <form class="d-flex">
-                <a href="insert" class="btn" style="background-color: #000000; color: #F6F1F1;">เพิ่มข้อมูล</a>&nbsp;
-                <a href="logout" class="btn" style="background-color: #000000; color: #F6F1F1;">ออกจากระบบ</a>
+                <a href="{{ route('insert', ['id' => $user->id]) }}" class="btn" style="background-color: #000000; color: #F6F1F1;">เพิ่มข้อมูล</a>&nbsp;
+                <a href="/logout" class="btn" style="background-color: #000000; color: #F6F1F1;">ออกจากระบบ</a>
             </form>
         </div>
     </nav>
@@ -41,12 +41,19 @@
                             onclick="return confirm('คุณต้องการลบชื่อ {{ $item->name }} หรือไม่ ?')">ลบ</a>
                     </div>
                 @endforeach
+                
             </div><br>
             {{ $user_names->links() }}
         @else
             <h2>ไม่พบรายชื่อ</h2>
         @endif
+        <div>
+            <label for="">M = ชาย</label>
+            <label for="">F = หญิง</label>
+            <label for="">N = ไม่ระบุ</label>
+        </div>
     </div>
+
 </body>
 
 </html>

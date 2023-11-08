@@ -32,7 +32,6 @@
                     <div class="box_user">
                         ชื่อ : {{ $item->name }}<br>
                         อายุ : {{ $item->age }}<br>
-                        เพศ : {{ $item->gender }} <br>
                     </div>
                 @endforeach
             </div><br>

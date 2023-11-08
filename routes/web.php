@@ -9,9 +9,9 @@ use App\Http\Controllers\AuthController;
 // หน้าเริ่มต้นกอ่นlogin
 Route::get('/', [AdminController::class,'home'])->name('home');
 // หน้าเริ่มต้นหลังlogin
-Route::get('/index', [AdminController::class,'index'])->name('index');
+Route::get('/index/{id}', [AdminController::class,'index'])->name('index');
 // เพิ่มข้อมูล
-Route::get('insert',[AdminController::class,'insert'])->name('insert');
+Route::get('index/{id}/insert',[AdminController::class,'insert'])->name('insert');
 // ลบข้อมูล
 Route::get('delete/{id}',[AdminController::class,'delete'])->name('delete');
 // แก้ไข

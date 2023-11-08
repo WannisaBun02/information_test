@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
-
+use App\Models\User;
 
 class AdminController extends Controller
 {
@@ -17,22 +17,24 @@ class AdminController extends Controller
         return view('home', compact('user_names'));
     }
     // หน้าแรกหลังlogin
-    function index()
+    function index($id)
     {
+        $user = User::find($id);
         $user_names = DB::table('information_tests')->paginate(4);
-        return view('index', compact('user_names'));
+        return view('index', ['user' => $user], compact('user_names'));
     }
     // หน้าเพิ่มข้อมูล
-    function insert()
+    function insert($id)
     {
-        return view('insert');
+        $user = User::find($id);
+        return view('insert', ['user' => $user]);
     }
     // หน้า login
     function login()
     {
         return view('login');
     }
-    
+
     // post
     // เพิ่มข้อมูลลงฐานข้อมูล
     function insertt(Request $request)
@@ -89,7 +91,7 @@ class AdminController extends Controller
     // ออกจากระบบ
     function logout()
     {
-        $user_names = DB::table('information_tests')->paginate(4);
-        return view('home', compact('user_names'));
+        Auth::logout(); // ลบเซสชันและออกจากระบบ
+        return redirect('/'); // นำผู้ใช้กลับไปที่หน้าหลักหรือหน้าล็อกอิน
     }
 }

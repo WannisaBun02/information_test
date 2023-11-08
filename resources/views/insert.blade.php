@@ -21,7 +21,7 @@
 <body>
     <div class="container py-2">
         <h2>เพิ่มข้อมูล</h2>
-        <form action="insertt" method="POST">
+        <form action="/insertt" method="POST">
             @csrf
             <div class="box_insert">
                 <div class="">
@@ -40,6 +40,7 @@
                                 <option selected>เลือกเพศ</option>
                                 <option value="M">ชาย</option>
                                 <option value="F">หญิง</option>
+                                <option value="N">ไม่ระบุ</option>
                             </select>
                         </div>&nbsp;
                     </div>
@@ -62,7 +63,7 @@
                     <span class="text text-danger">{{ $message }}</span>
                 </div>
             @enderror
-            <a href="/index" class="btn" style="background-color: #000000; color: #F6F1F1;">กลับไปหน้าแรก</a>
+            <a href="{{ route('index', ['id' => $user->id]) }}" class="btn" style="background-color: #000000; color: #F6F1F1;">กลับไปหน้าแรก</a>
             <input type="submit" class="btn" style="background-color: #146C94; color: #F6F1F1;" value="บันทีก">
         </form><br>
     </div>

@@ -10,6 +10,7 @@ use App\Models\User;
 
 class AuthController extends Controller
 {
+    // เมื่อคลิกที่ login
     function login(Request $request)
     {
         $email = $request->input('email');
@@ -19,7 +20,7 @@ class AuthController extends Controller
 
         if ($user && $user->password === $password) {
             // Authentication successful
-            return redirect('/index');
+            return redirect()->route('index', ['id' => $user->id])->with('user', $user);;
         }
 
         // Authentication failed
